@@ -7,7 +7,7 @@ import Blogs from "./components/list";
 import EditBlog from "./components/edit"
 import NewBlog from "./components/new"
 
-import logo from "./logo.svg"
+import logo from "./logo.png"
 
 class App extends Component {
   render() {
@@ -18,7 +18,7 @@ class App extends Component {
           <a class="navbar-brand" href="https://codingthesmartway.com" target="_blank">
             <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com" />
           </a>
-          <Link to="/" className="navbar-brand">ブログ記事一覧</Link>
+          <Link to="/" className="navbar-brand">瀬戸内の雲のように</Link>
           <div className="collpase navbar-collapse">
             <ul className="navbar-nav mr-auto">
               <li className="navbar-item">
