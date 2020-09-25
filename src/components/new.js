@@ -12,6 +12,7 @@ export default class NewBlog extends Component {
     this.onChangeDescription = this.onChangeDescription.bind(this);
     this.onChangePictureId = this.onChangePictureId.bind(this);
     this.onChangeStatus = this.onChangeStatus.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       title: '',
