@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+const config = require('../config');
+const url = config.backend_url + ':' + config.port;
 
 export default class NewBlog extends Component {
 
@@ -74,6 +77,19 @@ export default class NewBlog extends Component {
     console.log(`Form submitted:`);
     console.log(`Title: ${this.state.title}`);
     console.log(`Content: ${this.state.content}`);
+
+    const newBlog = {
+      title: this.state.title,
+      content: this.state.content,
+      created_at: this.state.created_at,
+      updated_at: this.state.updated_at,
+      description: this.state.description,
+      picture_id: this.state.picture_id,
+      status: this.state.status
+    }
+
+    axios.post(url + '/blogs/add', newBlog)
+      .then(res => console.log(res.data));
 
     this.setState({
       title: '',
