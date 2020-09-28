@@ -84,14 +84,14 @@ export default class EditBlog extends Component {
     }
     console.log(obj)
 
-    axios.post(url + '/blogs/add', obj)
+    axios.post(url + '/blogs/update/' + this.props.match.params.id, obj)
       .then(res => console.log(res.data));
 
     this.props.history.push('/');
   }
 
   componentDidMount() {
-    axios.get(url + '/blogs' + this.props.match.params.id)
+    axios.get(url + '/blogs/' + this.props.match.params.id)
       .then(response => {
         this.setState({
           title: response.data.title,
