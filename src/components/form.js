@@ -78,7 +78,7 @@ export default class Form extends Component {
     console.log(`Title: ${this.state.title}`);
     console.log(`Content: ${this.state.content}`);
 
-    const newBlog = {
+    const Blog = {
       title: this.state.title,
       content: this.state.content,
       created_at: this.state.created_at,
@@ -87,10 +87,14 @@ export default class Form extends Component {
       picture_id: this.state.picture_id,
       status: this.state.status
     }
+    console.log(Blog)
 
-    axios.post(url + '/blogs/add', newBlog)
+    axios.post(url + this.props.uri, Blog)
       .then(res => console.log(res.data));
 
+    this.props.history.push('/');
+
+    /*
     this.setState({
       title: '',
       content: '',
@@ -100,6 +104,7 @@ export default class Form extends Component {
       picture_id: '',
       status: false
     })
+    */
   }
 
 
@@ -121,7 +126,7 @@ export default class Form extends Component {
             <input type="textarea" className="form-control" value={this.state.content} onChange={this.onChangeContent} />
           </div>
           <div className="form-group">
-            <input type="submit" value="記事投稿" className="btn btn-primary" />
+            <input type="submit" value={this.props.submit_value} className="btn btn-primary" />
           </div>
         </form>
       </div>

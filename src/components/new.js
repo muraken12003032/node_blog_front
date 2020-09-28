@@ -8,7 +8,7 @@ export default class NewBlog extends Component {
   render() {
     return(
       <div>
-        <Form page_title="新規作成"/>
+        <Form page_title="新規作成" submit_value="記事投稿" uri="/blogs/add"/>
       </div>
     )
   }
