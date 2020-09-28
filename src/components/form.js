@@ -122,6 +122,6 @@ export default class Form extends Component {
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
