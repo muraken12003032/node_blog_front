@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import Form from './form';
-const config = require('../config');
-const url = config.backend_url + ':' + config.port;
+//import axios from 'axios';
+//const config = require('../config');
+//const url = config.backend_url + ':' + config.port;
 
 export default class NewBlog extends Component {
   render() {
     return(
       <div>
-        <Form page_title="新規作成" submit_value="記事投稿" uri="/blogs/add"/>
+        <Form type="new" page_title="新規作成" submit_value="記事投稿" uri="/blogs/add"/>
       </div>
     )
   }

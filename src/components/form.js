@@ -93,18 +93,26 @@ export default class Form extends Component {
       .then(res => console.log(res.data));
 
     this.props.history.push('/');
+  }
 
-    /*
-    this.setState({
-      title: '',
-      content: '',
-      created_at: '',
-      updated_at: '',
-      description: '',
-      picture_id: '',
-      status: false
-    })
-    */
+  componentDidMount() {
+    if(this.props.type==="update") {
+      axios.get(url + '/blogs/' + this.props.match.params.id)
+        .then(response => {
+          this.setState({
+            title: response.data.title,
+            description: response.data.description,
+            content: response.data.content,
+            created_at: response.data.created_at,
+            updated_at: response.data.updated_at,
+            picture_id: response.data.picture_id,
+            status: response.data.status
+          })
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    }
   }
 
 

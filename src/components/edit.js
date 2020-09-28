@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Form from './form';
-//import axios from 'axios';
-//const config = require('../config');
-//const url = config.backend_url + ':' + config.port;
+import axios from 'axios';
+const config = require('../config');
+const url = config.backend_url + ':' + config.port;
 
 export default class EditBlog extends Component {
 
@@ -91,7 +91,6 @@ export default class EditBlog extends Component {
 
     this.props.history.push('/');
   }
-  */
 
   componentDidMount() {
     axios.get(url + '/blogs/' + this.props.match.params.id)
@@ -110,11 +109,12 @@ export default class EditBlog extends Component {
         console.log(error);
       })
   }
+  */
 
   render() {
     return(
       <div>
-        <Form page_title="記事編集" submit_value="更新" uri="/blogs/" uri="/blogs/update/{this.props.match.params.id}" />
+        <Form type="update" page_title="記事編集" submit_value="更新" uri="/blogs/" uri="/blogs/update/{this.props.match.params.id}" />
       </div>
     );
   }
