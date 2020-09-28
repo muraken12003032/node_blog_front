@@ -16,7 +16,6 @@ export default class Form extends Component {
     this.onChangePictureId = this.onChangePictureId.bind(this);
     this.onChangeStatus = this.onChangeStatus.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
-    this.pageTitle
 
     this.state = {
       title: '',
@@ -25,7 +24,8 @@ export default class Form extends Component {
       updated_at: '',
       description: '',
       picture_id: '',
-      status: false
+      status: false,
+      page_title: ''
     }
   }
 
@@ -107,7 +107,7 @@ export default class Form extends Component {
   render() {
     return (
       <div style={{merginTop: 10}}>
-        <h3>{pageTitle}</h3>
+        <h3>{this.state.page_title}</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Title: </label>
