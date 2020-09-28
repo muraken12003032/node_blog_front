@@ -107,7 +107,6 @@ export default class Form extends Component {
   render() {
     return (
       <div style={{merginTop: 10}}>
-        <!--<h3>新規記事作成</h3>-->
         <h3>{pageTitle}</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
