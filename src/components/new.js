@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Form from './form';
 const config = require('../config');
 const url = config.backend_url + ':' + config.port;
-import Form from './list';
 
 export default class NewBlog extends Component {
   render() {
     return(
-      <Form />
+      <div>
+        <Form />
+      </div>
     )
   }
 }
