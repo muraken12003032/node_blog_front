@@ -7,7 +7,7 @@ import Form from './list';
 export default class NewBlog extends Component {
   render() {
     return(
-      t <Form />
+      <Form />
     )
   }
 }
