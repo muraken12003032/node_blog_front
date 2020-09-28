@@ -8,7 +8,7 @@ export default class NewBlog extends Component {
   render() {
     return(
       <div>
-        <Form />
+        <Form pageTitle="新規作成"/>
       </div>
     )
   }
