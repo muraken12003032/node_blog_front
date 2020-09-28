@@ -2,7 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 const config = require('../config');
 const url = config.backend_url + ':' + config.port;
+import Form from './list';
 
+export default class NewBlog extends Component {
+  render() {
+    <Form />
+  }
+}
+
+/*
 export default class NewBlog extends Component {
 
   constructor(props) {
@@ -128,3 +136,4 @@ export default class NewBlog extends Component {
     )
   }
 }
+*/
