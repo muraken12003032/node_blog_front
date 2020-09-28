@@ -25,7 +25,6 @@ export default class Form extends Component {
       description: '',
       picture_id: '',
       status: false,
-      page_title: ''
     }
   }
 
@@ -107,7 +106,7 @@ export default class Form extends Component {
   render() {
     return (
       <div style={{merginTop: 10}}>
-        <h3>{this.state.page_title}</h3>
+        <h3>{this.props.page_title}</h3>
         <form onSubmit={this.onSubmit}>
           <div className="form-group">
             <label>Title: </label>
