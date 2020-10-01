@@ -112,9 +112,10 @@ export default class EditBlog extends Component {
   */
 
   render() {
+    const url = '/blogs/update/' + this.props.match.params.id;
     return(
       <div>
-        <Form type="update" page_title="記事編集" submit_value="更新" uri="/blogs/" uri="/blogs/update/{this.props.match.params.id}" />
+        <Form type="update" page_title="記事編集" submit_value="更新"  uri={uri} id={this.props.match.params.id} />
       </div>
     );
   }

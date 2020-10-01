@@ -96,8 +96,9 @@ export default class Form extends Component {
   }
 
   componentDidMount() {
+    console.log(this.props.type);
     if(this.props.type==="update") {
-      axios.get(url + '/blogs/' + this.props.match.params.id)
+      axios.get(url + '/blogs/' + this.props.id)
         .then(response => {
           this.setState({
             title: response.data.title,
