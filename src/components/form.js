@@ -92,6 +92,7 @@ export default class Form extends Component {
     axios.post(url + this.props.uri, Blog)
       .then(res => console.log(res.data));
 
+    console.log('redirect mae no props: ' + this.props);
     this.props.history.push('/');
   }
 
