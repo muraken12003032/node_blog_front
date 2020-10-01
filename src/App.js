@@ -34,6 +34,7 @@ class App extends Component {
         <Route path="/" exact component={Blogs} />
         <Route path="/edit/:id" component={EditBlog} />
         <Route path="/create" component={NewBlog} />
+        <Route path="/blog/:id" component={Blog} />
       </div>
     </Router>
     );
