@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { withRouter } from 'react-router';
 const config = require('../config');
 const url = config.backend_url + ':' + config.port;
 
-export default class Form extends Component {
+class Form extends Component {
 
   constructor(props) {
     super(props);
@@ -143,3 +144,5 @@ export default class Form extends Component {
     );
   }
 }
+
+export default withRouter(Form)
