@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Blogs from "./components/list";
-import EditBlog from "./components/edit"
-import NewBlog from "./components/new"
+import EditBlog from "./components/edit";
+import NewBlog from "./components/new";
+import Blog from "./components/blog";
 
 import logo from "./logo.png"
 
