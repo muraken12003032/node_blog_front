@@ -6,7 +6,9 @@ const url = config.backend_url + ':' + config.port;
 
 const Blog = props => (
   <tr>
-    <td>{props.blog.title}</td>
+    <td>
+      <Link to={"/blog/"+props.blog._id}>{props.blog.title}</Link>
+    </td>
     <td>{props.blog.description}</td>
     <td>{props.blog.content}</td>
     <td>
