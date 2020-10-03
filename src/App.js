@@ -7,6 +7,7 @@ import Blogs from "./components/list";
 import EditBlog from "./components/edit";
 import NewBlog from "./components/new";
 import Blog from "./components/blog";
+import Footer from "./components/footer";
 
 import logo from "./logo.png"
 
@@ -37,6 +38,7 @@ class App extends Component {
         <Route path="/create" component={NewBlog} />
         <Route path="/blogs/:id" component={Blog} />
       </div>
+      <Footer />
     </Router>
     );
   }
