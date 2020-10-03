@@ -26,7 +26,9 @@ export default class Blog extends Component {
     console.log(this.props);
     return(
       <div>
-        ここにブログ記事を表示
+        <h2>{this.state.blog.title}</h2>
+        <h3>{this.state.blog.description}</h3>
+        <p>{this.state.blog.content}</p>
       </div>
     );
   }
