@@ -26,7 +26,7 @@ export default class Login extends Component {
 
   onChangePassword(e) {
     this.setState({
-      password: e.target.password
+      password: e.target.value
     })
   }
 
