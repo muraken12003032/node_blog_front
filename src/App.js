@@ -11,6 +11,7 @@ import Blog from "./components/blog";
 import logo from "./logo.png"
 import Auth from './components/auth';
 import Admin from "./components/admin"
+import Login from "./components/login"
 
 class App extends Component {
   render() {
@@ -38,6 +39,7 @@ class App extends Component {
         <Route path="/edit/:id" component={EditBlog} />
         <Route path="/create" component={NewBlog} />
         <Route path="/blogs/:id" component={Blog} />
+        <Route exact path="/login" component={Login} />
         <Switch>
           <Auth>
             <Route exact path="/adminpage" component={Admin} />
