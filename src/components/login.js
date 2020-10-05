@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import User from './User';
 
 export default class Login extends Component {
   constructor(props) {
@@ -6,6 +8,7 @@ export default class Login extends Component {
 
     this.onChangeEmail = this.onChangeEmail.bind(this);
     this.onChangePassword = this.onChangePassword.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
 
     this.state = {
       email: '',
