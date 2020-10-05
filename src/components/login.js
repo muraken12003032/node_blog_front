@@ -1,55 +1,58 @@
 import React, { Component } from 'react';
+import { Form, Button, Container, Row, Alert } from 'react-bootstrap';
 import { withRouter } from 'react-router-dom';
-import User from './User';
+import User from '../classes/user';
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
-    this.onChangeEmail = this.onChangeEmail.bind(this);
-    this.onChangePassword = this.onChangePassword.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
-
     this.state = {
       email: '',
-      password: ''
+      password: '',
+      errMessage: ''
     }
   }
 
-  onSubmit(e) {
-    e.preventDefault();
-    console.log(this.state);
-  }
+  click = async() => {
+    try {
+      await User.login(this.state.email, this.state.password);
 
-  onChangeEmail(e) {
-    this.setState({
-      email: e.target.value
-    });
-  }
+      this.props.history.push({ pathname: 'adminpage' });
+    } catch(e) {
+      this.setState({ errMessage: 'メールアドレスかパスワードが違います' });
+    }
+  };
 
-  onChangePassword(e) {
-    this.setState({
-      password: e.target.value
-    })
+  handleChange = e => {
+    this.setState({ [e.target.id]: e.target.value });
   }
 
   render() {
     return(
-      <div>
-        <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label>Email: </label>
-            <input type="text" className="form-control" value={this.state.email} onChange={this.onChangeEmail} />
-          </div>
-          <div className="form-group">
-            <label>Password: </label>
-            <input type="password" className="form-control" value={this.state.password} onChange={this.onChangePassword} />
-          </div>
-          <div className="form-group">
-            <input type="submit" value={this.props.submit_value} className="btn btn-primary" />
-          </div>
-        </form>
-      </div>
-    )
+      <Container className="center">
+        <Row className="justify-content-md-center">
+          <Form>
+            {this.state.errMessage && (
+              <Alert variant="danger">{this.props.message}</Alert>
+            )}
+            <h3>ログイン</h3>
+            <Form.Group controlId="email">
+              <Form.Label>email: </Form.Label>
+              <Form.Control type="email" placeholder="メールアドレス" onChange={this.handleChange} value={this.state.email} />
+            </Form.Group>
+            <Form.Group controlId="password">
+              <Form.Label>Password: </Form.Label>
+              <Form.Control type="password" placeholder="パスワードを入力してください" onChange={this.handleChange} value={this.state.password} />
+            </Form.Group>
+            <Button variant="primary" type="button" onClick={this.click}>
+              ログイン
+            </Button>
+          </Form>
+        </Row>
+      </Container>
+    );
   }
 }
+
+export default withRouter(Login);
