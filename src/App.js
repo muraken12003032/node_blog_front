@@ -49,10 +49,10 @@ class App extends Component {
           </div>
         </nav>
         <br/>
-        <Route path="/" exact component={Blogs} />
-        <Route path="/blogs/:id" component={Blog} />
-        <Route exact path="/login" component={Login} />
         <Switch>
+          <Route path="/" exact component={Blogs} />
+          <Route path="/blogs/:id" component={Blog} />
+          <Route exact path="/login" component={Login} />
           <Auth>
             <Route exact path="/adminpage" component={Admin} />
             <Route path="/adminpage/edit/:id" component={EditBlog} />
