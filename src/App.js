@@ -12,6 +12,7 @@ import logo from "./logo.png"
 import Auth from './components/auth';
 import Admin from "./components/admin"
 import Login from "./components/login"
+import Logout from "./components/logout"
 import User from "./classes/user"
 
 const navbar = () => {
@@ -27,7 +28,7 @@ const navbar = () => {
         <Link to="/adminpage/create" className="nav-link">新規記事投稿</Link>
       </li>
       <li className="navbar-item">
-        <Link to="/adminpage/create" className="nav-link">ログアウト</Link>
+        <Link to="/adminpage/logout" className="nav-link">ログアウト</Link>
       </li>
     </ul>
   );
@@ -56,6 +57,7 @@ class App extends Component {
             <Route exact path="/adminpage" component={Admin} />
             <Route path="/adminpage/edit/:id" component={EditBlog} />
             <Route path="/adminpage/create" component={NewBlog} />
+            <Route path="/adminpage/logout" component={Logout} />
           </Auth>
         </Switch>
       </div>
