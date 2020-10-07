@@ -6,7 +6,7 @@ class Logout extends Component {
   constructor(props) {
     super(props);
   }
-  componentDidMount() {
+  async componentDidMount() {
     await User.logout();
   }
   render() {
