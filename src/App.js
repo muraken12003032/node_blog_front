@@ -41,7 +41,6 @@ class App extends Component {
         <Switch>
           <Auth>
             <Route exact path="/adminpage" component={Admin} />
-            <Route path="/" exact component={Blogs} />
             <Route path="/adminpage/edit/:id" component={EditBlog} />
             <Route path="/adminpage/create" component={NewBlog} />
           </Auth>

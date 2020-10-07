@@ -5,7 +5,7 @@ import axios from 'axios';
 const config = require('../config');
 const url = config.backend_url + ':' + config.port;
 
-isPublished = (status) => {
+const isPublished = (status) => {
   if(status){
     return("公開中");
   }else{
