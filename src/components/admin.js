@@ -5,6 +5,14 @@ import axios from 'axios';
 const config = require('../config');
 const url = config.backend_url + ':' + config.port;
 
+isPublished = (status) => {
+  if(status){
+    return("公開中");
+  }else{
+    return("下書き");
+  }
+}
+
 const Blog = props => (
   <tr>
     <td>
@@ -12,8 +20,9 @@ const Blog = props => (
     </td>
     <td>{props.blog.description}</td>
     <td>{props.blog.content}</td>
+    <td>{isPublished(props.blog.status)}</td>
     <td>
-      <Link to={"/edit/"+props.blog._id}>Edit</Link>
+      <Link to={"/adminpage/edit/"+props.blog._id}>Edit</Link>
     </td>
   </tr>
 )
@@ -54,6 +63,7 @@ export default class Admin extends Component {
                 <th>Description</th>
                 <th>Content</th>
                 <th>status</th>
+                <th>Edit</th>
               </tr>
             </thead>
             <tbody>
