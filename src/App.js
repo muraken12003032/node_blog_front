@@ -12,6 +12,20 @@ import logo from "./logo.png"
 import Auth from './components/auth';
 import Admin from "./components/admin"
 import Login from "./components/login"
+import User from "./classes/user"
+
+const navbar = () => {
+  return(
+    <ul className="navbar-nav mr-auto">
+      <li className="navbar-item">
+        <Link to="/" className="nav-link">一覧</Link>
+      </li>
+      <li className="navbar-item">
+        <Link to="/create" className="nav-link">新規記事投稿</Link>
+      </li>
+    </ul>
+  );
+}
 
 class App extends Component {
   render() {
@@ -24,14 +38,7 @@ class App extends Component {
           </a>
           <Link to="/" className="navbar-brand">瀬戸内の雲のように</Link>
           <div className="collpase navbar-collapse">
-            <ul className="navbar-nav mr-auto">
-              <li className="navbar-item">
-                <Link to="/" className="nav-link">一覧</Link>
-              </li>
-              <li className="navbar-item">
-                <Link to="/create" className="nav-link">新規記事投稿</Link>
-              </li>
-            </ul>
+            {User.isLoggedIn && navbar()}
           </div>
         </nav>
         <br/>
