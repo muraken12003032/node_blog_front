@@ -18,10 +18,16 @@ const navbar = () => {
   return(
     <ul className="navbar-nav mr-auto">
       <li className="navbar-item">
-        <Link to="/" className="nav-link">一覧</Link>
+        <Link to="/" className="nav-link">トップページ</Link>
       </li>
       <li className="navbar-item">
-        <Link to="/create" className="nav-link">新規記事投稿</Link>
+        <Link to="/adminpage/" className="nav-link">一覧</Link>
+      </li>
+      <li className="navbar-item">
+        <Link to="/adminpage/create" className="nav-link">新規記事投稿</Link>
+      </li>
+      <li className="navbar-item">
+        <Link to="/adminpage/create" className="nav-link">ログアウト</Link>
       </li>
     </ul>
   );
