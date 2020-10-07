@@ -11,9 +11,6 @@ const Blog = props => (
     </td>
     <td>{props.blog.description}</td>
     <td>{props.blog.content}</td>
-    <td>
-      <Link to={"/edit/"+props.blog._id}>Edit</Link>
-    </td>
   </tr>
 )
 
