@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Blogs from "./components/list";
+import Blogs from "./components/top";
 import EditBlog from "./components/edit";
 import NewBlog from "./components/new";
 import Blog from "./components/blog";
