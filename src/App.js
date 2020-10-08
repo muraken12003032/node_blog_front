@@ -45,7 +45,7 @@ class App extends Component {
           </a>
           <Link to="/" className="navbar-brand">瀬戸内の雲のように</Link>
           <div className="collpase navbar-collapse">
-            {User.isLoggedIn && navbar()}
+            {User.isLoggedIn() ? navbar() : <br />}
           </div>
         </nav>
         <br/>
