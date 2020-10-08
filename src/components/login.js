@@ -15,11 +15,9 @@ class Login extends Component {
   }
 
   click = async() => {
-    try {
-      await User.login(this.state.email, this.state.password);
-
+    if(await User.login(this.state.email, this.state.password)){
       this.props.history.push({ pathname: 'adminpage' });
-    } catch(e) {
+    }else{
       this.setState({ errMessage: 'メールアドレスかパスワードが違います' });
     }
   };
@@ -34,7 +32,7 @@ class Login extends Component {
         <Row className="justify-content-md-center">
           <Form>
             {this.state.errMessage && (
-              <Alert variant="danger">{this.props.message}</Alert>
+              <Alert variant="danger">{this.state.errMessage}</Alert>
             )}
             <h3>ログイン</h3>
             <Form.Group controlId="email">
