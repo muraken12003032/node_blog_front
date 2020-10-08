@@ -45,6 +45,7 @@ class App extends Component {
           </a>
           <Link to="/" className="navbar-brand">瀬戸内の雲のように</Link>
           <div className="collpase navbar-collapse">
+            {/* ログイン後だけnavbarを表示させたい */}
             {User.isLoggedIn() ? navbar() : <br />}
           </div>
         </nav>

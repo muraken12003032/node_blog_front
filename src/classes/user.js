@@ -1,3 +1,5 @@
+const adminEmail = 'k_murata';
+const adminPassword = 'a9id3Khes'
 class User {
   isLoggedIn = () => this.get('isLoggedIn') === 'true';
 
@@ -14,9 +16,12 @@ class User {
   };
 
   login = async (email, password) => {
-    this.set('isLoggedIn', true);
-
-    return true;
+    if(email===adminEmail && password===adminPassword) {
+      this.set('isLoggedIn', true);
+      return true;
+    } else {
+      return false;
+    }
   };
 
   logout = async() => {
