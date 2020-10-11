@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import {Container, Row} from 'react-bootstrap';
 const config = require('../config')
 const url = config.backend_url + ':' + config.port;
 
@@ -39,21 +40,11 @@ export default class Blogs extends Component {
 
   render() {
     return (
-      <div>
-        <h3>ブログ一覧</h3>
-        <table className="table table-striped" style={{ merginTop: 20 }}>
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Description</th>
-              <th>Content</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this.Blogs() }
-          </tbody>
-        </table>
-      </div>
+      <Container className="container-fluid">
+        <div className="col-xs-12 col-sm-9 col-md-9">
+          { this.Blogs() }
+        </div>
+      </Container>
     )
   }
 }
