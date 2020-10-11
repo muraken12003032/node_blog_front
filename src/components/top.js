@@ -2,17 +2,36 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {Container, Row} from 'react-bootstrap';
+import "bootstrap/dist/css/bootstrap.min.css";
 const config = require('../config')
 const url = config.backend_url + ':' + config.port;
 
 const Blog = props => (
-  <tr>
-    <td>
-      <Link to={"/blogs/"+props.blog._id}>{props.blog.title}</Link>
-    </td>
-    <td>{props.blog.description}</td>
-    <td>{props.blog.content}</td>
-  </tr>
+  <Row>
+    <div className="col-xs-12 col-lg-12">
+      <Row>
+        <div className="col-xs-12 col-lg-12">
+          <h2>
+              <Link to={"/blogs/"+props.blog._id}>{props.blog.title}</Link>
+          </h2>
+        </div>
+      </Row>
+      <Row>
+        <div className="col-xs-12 col-lg-12">
+          <p>
+            {props.blog.description}
+          </p>
+        </div>
+      </Row>
+      <Row>
+        <div className="col-xs-12 col-lg-12">
+          <p>
+            {props.blog.content}
+          </p>
+        </div>
+      </Row>
+    </div>
+  </Row>
 )
 
 export default class Blogs extends Component {
