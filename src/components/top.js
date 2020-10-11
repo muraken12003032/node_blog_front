@@ -18,16 +18,14 @@ const Blog = props => (
       </Row>
       <Row>
         <div className="col-xs-12 col-lg-12">
-          <p>
-            {props.blog.description}
-          </p>
+          {props.blog.created_at ? props.blog.created_at : "1970-1-1 09:00:00" }
         </div>
       </Row>
       <Row>
         <div className="col-xs-12 col-lg-12">
-          <p>
+          <h3>
             {props.blog.content}
-          </p>
+          </h3>
         </div>
       </Row>
     </div>
