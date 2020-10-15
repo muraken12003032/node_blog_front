@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
 import axios from 'axios';
+import { Container, Row } from 'react-bootstrap';
 const config = require('../config');
 const url = config.backend_url + ':' + config.port;
+
+const Title = props => (
+  <Row>
+    <div className="col-xs-12 col-lg-12">
+      <h2>{props.title}</h2>
+    </div>
+  </Row>
+)
+
+const Content = props => (
+  <Row>
+    <div className="col-xs-12 col-lg-12">
+      <p>{props.content}</p>
+    </div>
+  </Row>
+
+)
 
 export default class Blog extends Component {
 
@@ -21,15 +38,15 @@ export default class Blog extends Component {
       })
   }
 
-
   render() {
     console.log(this.props);
     return(
-      <div>
-        <h2>{this.state.blog.title}</h2>
-        <h3>{this.state.blog.description}</h3>
-        <p>{this.state.blog.content}</p>
-      </div>
+      <Container className="container-fluid">
+        <div className="col-xs-12 col-sm-9 col-md-9">
+          <Title title={this.state.blog.title} />
+          <Content content={this.state.blog.content} />
+        </div>
+      </Container>
     );
   }
 }
