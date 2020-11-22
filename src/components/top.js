@@ -23,9 +23,9 @@ const Blog = props => (
       </Row>
       <Row>
         <div className="col-xs-12 col-lg-12">
-          <h3>
-            {props.blog.content}
-          </h3>
+          <p>
+            {props.blog.content.slice(0,30)}...
+          </p>
         </div>
       </Row>
     </div>
