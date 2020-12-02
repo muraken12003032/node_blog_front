@@ -18,8 +18,6 @@ const Blog = props => (
     <td>
       <Link to={"/blogs/"+props.blog._id}>{props.blog.title}</Link>
     </td>
-    <td>{props.blog.description}</td>
-    <td>{props.blog.content}</td>
     <td>{isPublished(props.blog.status)}</td>
     <td>
       <Link to={"/adminpage/edit/"+props.blog._id}>Edit</Link>

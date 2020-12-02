@@ -134,7 +134,7 @@ class Form extends Component {
           </div>
           <div className="form-group">
             <label>Content: </label>
-            <input type="textarea" className="form-control" value={this.state.content} onChange={this.onChangeContent} />
+            <textarea className="form-control" rows="30" value={this.state.content} onChange={this.onChangeContent} ></textarea>
           </div>
           <div className="form-group">
             <input type="submit" value={this.props.submit_value} className="btn btn-primary" />

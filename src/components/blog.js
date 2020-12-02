@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import ReactMarkDown from 'react-markdown/with-html';
 import axios from 'axios';
 import { Container, Row } from 'react-bootstrap';
-import highlight from 'highlightjs';
-import 'highlightjs/styles/docco.css';
+import CodeBlock from './codeblock.js';
 const config = require('../config');
 const url = config.backend_url + ':' + config.port;
 
@@ -18,7 +17,7 @@ const Title = props => (
 const Content = props => (
   <Row>
     <div className="col-xs-12 col-lg-12">
-      <ReactMarkDown source={props.content} escapeHtml={false} />
+      <ReactMarkDown source={props.content} renderers={{code: CodeBlock}} escapeHtml={false} />
     </div>
   </Row>
 
@@ -43,9 +42,10 @@ export default class Blog extends Component {
 
   render() {
     console.log(this.props);
+    let style = {"white-space": "pre-wrap"};
     return(
       <Container className="container-fluid">
-        <div className="col-xs-12 col-sm-12 col-md-12">
+        <div style={style} className="col-xs-12 col-sm-12 col-md-12">
           <Title title={this.state.blog.title} />
           <Content content={this.state.blog.content} />
         </div>
