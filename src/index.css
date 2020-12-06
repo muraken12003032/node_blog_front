@@ -1,10 +1,12 @@
+html {
+ min-height: 100%;
+ position: relative;
+}
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* おそらくこの !important を消すとbootstrapのcssが勝ってしまい上書きされるので必要*/
+  margin-bottom: 3em !important;
+  font-family: 'Quicksand', "游ゴシック体", "Yu Gothic", YuGothic, "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", 'メイリオ' , Meiryo , Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif !important;
 }
 
 code {
@@ -20,4 +22,9 @@ footer {
   height: 2em;
   background-color: #000000;
   color: #FFFFFF;
+}
+
+button {
+  /* おそらくこの !important を消すとbootstrapのcssが勝ってしまい上書きされるので必要*/
+  margin: 3px 3px 3px 3px !important;
 }
