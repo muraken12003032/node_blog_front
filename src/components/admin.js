@@ -58,8 +58,6 @@ export default class Admin extends Component {
             <thead>
               <tr>
                 <th>Title</th>
-                <th>Description</th>
-                <th>Content</th>
                 <th>status</th>
                 <th>Edit</th>
               </tr>

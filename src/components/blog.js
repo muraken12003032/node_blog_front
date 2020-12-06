@@ -3,6 +3,7 @@ import ReactMarkDown from 'react-markdown/with-html';
 import axios from 'axios';
 import { Container, Row } from 'react-bootstrap';
 import CodeBlock from './codeblock.js';
+import styles from './styles.scss'
 const config = require('../config');
 const url = config.backend_url + ':' + config.port;
 
@@ -16,7 +17,7 @@ const Title = props => (
 
 const Content = props => (
   <Row>
-    <div className="col-xs-12 col-lg-12">
+    <div className="content col-xs-12 col-lg-12">
       <ReactMarkDown source={props.content} renderers={{code: CodeBlock}} escapeHtml={false} />
     </div>
   </Row>

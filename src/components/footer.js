@@ -4,7 +4,7 @@ export default class Footer extends Component {
   render() {
     return(
       <div>
-        <footer>
+        <footer className="footer">
           瀬戸内の雲のように Since 2017 Copyright K.M
         </footer>
       </div>
