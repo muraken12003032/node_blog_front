@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default class Header extends Component {
-  constructor(props) {
+  constructor(props){
     super(props);
   }
 
@@ -26,18 +26,18 @@ export default class Header extends Component {
   }
 
   render() {
+    console.log(this.props.is_login);
     return(
-      <Router>
         <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to="/" className="navbar-brand">瀬戸内の雲のように</Link>
             <div className="collapse navbar-collapse">
               {/* ログイン後だけnavbarを表示させたい */}
-              {this.props.is_login ? navbar() : <br />}
+              {this.props.is_login ? this.navbar() : <br />}
+              {/*this.props.is_login ? <br /> : this.navbar()*/}
             </div>
           </nav>
         </div>
-      </Router>
     )
   }
 }

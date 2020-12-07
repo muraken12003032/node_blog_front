@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Form from './form';
-const config = require('../config');
-const url = config.backend_url + ':' + config.port;
+//const config = require('../config');
+//const url = config.backend_url + ':' + config.port;
 
 export default class EditBlog extends Component {
 

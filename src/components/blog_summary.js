@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Row } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from 'react-router-dom';
-const config = require('../config')
+//const config = require('../config')
 
 export default class BlogSummary extends Component {
   constructor(props) {

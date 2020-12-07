@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import {Container, Row, Button} from 'react-bootstrap';
+import {Container, Button} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import BlogSummary from './blog_summary.js';
 const config = require('../config')
@@ -18,7 +18,6 @@ export default class Blogs extends Component {
     axios.get(url + '/blogs')
       .then(response => {
         this.setState({ blogs: response.data });
-        console.log(this.state);
       })
       .catch(function(error) {
         console.log(error);

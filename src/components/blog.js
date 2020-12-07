@@ -42,8 +42,7 @@ export default class Blog extends Component {
   }
 
   render() {
-    console.log(this.props);
-    let style = {"white-space": "pre-wrap"};
+    let style = {"whiteSpace": "pre-wrap"};
     return(
       <Container className="container-fluid">
         <div style={style} className="col-xs-12 col-sm-12 col-md-12">

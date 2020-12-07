@@ -1,20 +1,24 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+//import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
+import Blog from "./components/blog";
 import Blogs from "./components/top";
 import EditBlog from "./components/edit";
 import NewBlog from "./components/new";
-import Blog from "./components/blog";
 
-import logo from "./logo.png"
+//import logo from "./logo.png"
 import Auth from './components/auth';
 import Admin from "./components/admin"
 import Login from "./components/login"
 import Logout from "./components/logout"
+import Header from "./components/templates/header"
+import Footer from "./components/templates/footer";
 import User from "./classes/user"
 
+/*
 const navbar = () => {
   return(
     <ul className="navbar-nav mr-auto">
@@ -33,36 +37,28 @@ const navbar = () => {
     </ul>
   );
 }
+*/
 
 class App extends Component {
   render() {
     return (
       <Router>
-      <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <a class="navbar-brand" href="https://codingthesmartway.com" target="_blank">
-            <img src={logo} width="30" height="30" alt="CodingTheSmartWay.com" />
-          </a>
-          <Link to="/" className="navbar-brand">瀬戸内の雲のように</Link>
-          <div className="collpase navbar-collapse">
-            {/* ログイン後だけnavbarを表示させたい */}
-            {User.isLoggedIn() ? navbar() : <br />}
-          </div>
-        </nav>
-        <br/>
-        <Switch>
-          <Route path="/" exact component={Blogs} />
-          <Route path="/blogs/:id" component={Blog} />
-          <Route exact path="/login" component={Login} />
-          <Auth>
-            <Route exact path="/adminpage" component={Admin} />
-            <Route path="/adminpage/edit/:id" component={EditBlog} />
-            <Route path="/adminpage/create" component={NewBlog} />
-            <Route path="/adminpage/logout" component={Logout} />
-          </Auth>
-        </Switch>
-      </div>
-    </Router>
+        <Header is_login={User.isLoggedIn()}/>
+        <div className="container">
+          <Switch>
+            <Route path="/" exact component={Blogs} />
+            <Route path="/blogs/:id" component={Blog} />
+            <Route exact path="/login" component={Login} />
+            <Auth>
+              <Route exact path="/adminpage" component={Admin} />
+              <Route path="/adminpage/edit/:id" component={EditBlog} />
+              <Route path="/adminpage/create" component={NewBlog} />
+              <Route path="/adminpage/logout" component={Logout} />
+            </Auth>
+          </Switch>
+        </div>
+        <Footer />
+      </Router>
     );
   }
 }
