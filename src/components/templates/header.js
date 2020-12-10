@@ -26,16 +26,12 @@ export default class Header extends Component {
   }
 
   render() {
-    console.log(this.props.is_login);
     return(
         <div>
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to="/" className="navbar-brand">瀬戸内の雲のように</Link>
-            <div className="collapse navbar-collapse">
               {/* ログイン後だけnavbarを表示させたい */}
               {this.props.is_login ? this.navbar() : <br />}
-              {/*this.props.is_login ? <br /> : this.navbar()*/}
-            </div>
           </nav>
         </div>
     )
