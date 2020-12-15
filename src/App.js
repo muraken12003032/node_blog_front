@@ -11,12 +11,13 @@ import NewBlog from "./components/new";
 
 //import logo from "./logo.png"
 import Auth from './components/auth';
-import Admin from "./components/admin"
-import Login from "./components/login"
-import Logout from "./components/logout"
-import Header from "./components/templates/header"
+import Admin from "./components/admin";
+import Login from "./components/login";
+import Logout from "./components/logout";
+import Header from "./components/templates/header";
 import Footer from "./components/templates/footer";
-import User from "./classes/user"
+import User from "./classes/user";
+import SideBar from "./components/templates/sidebar";
 
 /*
 const navbar = () => {
@@ -45,6 +46,11 @@ class App extends Component {
       <Router>
         <Header is_login={User.isLoggedIn()}/>
         <div className="container">
+          <div className="row">
+            <div className="d-none d-md-block col-md-6 d-lg-block col-lg-5">
+              <SideBar />
+            </div>
+            <div className="col-xs-12 col-sm-12 col-md-6 col-lg-7">
           <Switch>
             <Route path="/" exact component={Blogs} />
             <Route path="/blogs/:id" component={Blog} />
@@ -56,6 +62,8 @@ class App extends Component {
               <Route path="/adminpage/logout" component={Logout} />
             </Auth>
           </Switch>
+            </div>
+          </div>
         </div>
         <Footer />
       </Router>

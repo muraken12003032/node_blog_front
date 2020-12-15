@@ -37,13 +37,13 @@ export default class Blogs extends Component {
 
   render() {
     return (
-      <Container className="container-fluid">
-        <div className="col-xs-12 col-sm-9 col-md-9">
+      <div >
+        <div>
           {this.Blogs()}
         </div>
         {this.state.current_page ? (<Button className="default" onClick={() => this.paging(this.state.current_page-config.page_per_article)}>前の5件を表示</Button>) : (<br />)}
         <Button className="default" onClick={() => this.paging(this.state.current_page+config.page_per_article)}>次の5件を表示</Button>
-      </Container>
+      </div>
     )
   }
 }
