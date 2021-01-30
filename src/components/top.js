@@ -4,7 +4,7 @@ import {Container, Button} from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.min.css";
 import BlogSummary from './blog_summary.js';
 const config = require('../config')
-const url = config.backend_url + ':' + config.port;
+const url = config.backend_url;
 
 
 export default class Blogs extends Component {

@@ -19,6 +19,9 @@ export default class Header extends Component {
           <Link to="/adminpage/create" className="nav-link">新規記事投稿</Link>
         </li>
         <li className="navbar-item">
+          <Link to="/adminpage/images" className="nav-link">画像</Link>
+        </li>
+        <li className="navbar-item">
           <Link to="/adminpage/logout" className="nav-link">ログアウト</Link>
         </li>
       </ul>

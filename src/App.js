@@ -12,6 +12,7 @@ import NewBlog from "./components/new";
 //import logo from "./logo.png"
 import Auth from './components/auth';
 import Admin from "./components/admin";
+import Images from "./components/images"
 import Login from "./components/login";
 import Logout from "./components/logout";
 import Header from "./components/templates/header";
@@ -60,6 +61,7 @@ class App extends Component {
               <Route path="/adminpage/edit/:id" component={EditBlog} />
               <Route path="/adminpage/create" component={NewBlog} />
               <Route path="/adminpage/logout" component={Logout} />
+              <Route path="/adminpage/images" component={Images} />
             </Auth>
           </Switch>
             </div>

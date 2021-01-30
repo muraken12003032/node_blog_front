@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { withRouter } from 'react-router';
 const config = require('../config');
-const url = config.backend_url + ':' + config.port;
+const url = config.backend_url;
 
 class Form extends Component {
 

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row } from 'react-bootstrap';
 import axios from 'axios';
 const config = require('../config');
-const url = config.backend_url + ':' + config.port;
+const url = config.backend_url;
 
 const isPublished = (status) => {
   if(status){

@@ -5,7 +5,7 @@ import { Container, Row } from 'react-bootstrap';
 import CodeBlock from './codeblock.js';
 import styles from './styles.scss'
 const config = require('../config');
-const url = config.backend_url + ':' + config.port;
+const url = config.backend_url;
 
 const Title = props => (
   <Row>
