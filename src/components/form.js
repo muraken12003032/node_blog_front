@@ -74,11 +74,6 @@ class Form extends Component {
   onSubmit(e) {
     e.preventDefault();
 
-    //Debug
-    console.log(`Form submitted:`);
-    console.log(`Title: ${this.state.title}`);
-    console.log(`Content: ${this.state.content}`);
-
     const Blog = {
       title: this.state.title,
       content: this.state.content,
@@ -88,17 +83,14 @@ class Form extends Component {
       picture_id: this.state.picture_id,
       status: this.state.status
     }
-    console.log(Blog)
 
     axios.post(url + this.props.uri, Blog)
       .then(res => console.log(res.data));
 
-    console.log('redirect mae no props: ' + this.props);
     this.props.history.push('/');
   }
 
   componentDidMount() {
-    console.log(this.props.type);
     if(this.props.type==="update") {
       axios.get(url + '/blogs/' + this.props.id)
         .then(response => {

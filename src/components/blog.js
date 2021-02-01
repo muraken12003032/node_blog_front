@@ -34,7 +34,8 @@ export default class Blog extends Component {
   componentDidMount() {
     axios.get(url + this.props.match.url)
       .then(response => {
-        this.setState({ blog: response.data });
+        console.log(response);
+        this.setState({ blog: response.data.Item });
       })
       .catch(function (error) {
         console.log(error);

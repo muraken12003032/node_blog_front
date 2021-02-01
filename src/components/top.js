@@ -17,7 +17,8 @@ export default class Blogs extends Component {
   componentDidMount() {
     axios.get(url + '/blogs')
       .then(response => {
-        this.setState({ blogs: response.data });
+        console.log(response.data);
+        this.setState({ blogs: response.data.blogs });
       })
       .catch(function(error) {
         console.log(error);
@@ -25,6 +26,7 @@ export default class Blogs extends Component {
   }
 
   Blogs() {
+    console.log(this.state.blogs);
     let blog5 = this.state.blogs.slice(this.state.current_page,this.state.current_page+5);
     return blog5.map(function(currentBlog, i){
       return <BlogSummary blog={currentBlog} key={i} />;

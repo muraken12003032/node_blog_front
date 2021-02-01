@@ -16,7 +16,7 @@ export default class BlogSummary extends Component {
           <Row>
             <div className="col-xs-12 col-lg-12">
               <h2>
-                  <Link to={"/blogs/"+this.props.blog._id}>{this.props.blog.title}</Link>
+                  <Link to={"/blogs/"+this.props.blog.id}>{this.props.blog.title}</Link>
               </h2>
             </div>
           </Row>
